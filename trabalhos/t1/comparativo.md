@@ -8,7 +8,7 @@ Nome: lokijuhygb
 | Característica                                            | Computador no TOP500  | Meu computador  |
 | --------------------------------------------------------- | --------------------- | --------------- |
 | Nome/Título                                               | Sunway TaihuLight     | Lenovo ThinkPad X200 |
-| Imagem (foto, diagrama, screenshot, etc.)                 | <img src="https://6lli539m39y3hpkelqsm3c2fg-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/Sunway-TaihuLight-System-2016-768x343.png" width="200"> <img src="https://6lli539m39y3hpkelqsm3c2fg-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/Sunway-TaihuLight-basic-layout-of-a-node.png" width="200"> | <img src="https://commons.wikimedia.org/wiki/File:Libreboot_on_Lenovo_Thinkpad_x200.jpg" width="200"> |
+| Imagem (foto, diagrama, screenshot, etc.)                 | <img src="https://6lli539m39y3hpkelqsm3c2fg-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/Sunway-TaihuLight-System-2016-768x343.png" width="200"> <img src="https://6lli539m39y3hpkelqsm3c2fg-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/Sunway-TaihuLight-basic-layout-of-a-node.png" width="200"> | <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Libreboot_on_Lenovo_Thinkpad_x200.jpg" width="200"> |
 | Classificação de Flynn                                    | MIMD SIMD             | MIMD |
 | Memória: compartilhada, distribuída ou ambas?             | Ambas                 | Compartilhada |
 | Número total de núcleos de processamento                  | 10649600 (10485760 + 163840) (40960 nodes. 40 gabinetes x 4 supernodes x 256 nodes x 4 grupos de (8^2 cores + 1 core auxiliar)) | 2 (uma thread por core) |
