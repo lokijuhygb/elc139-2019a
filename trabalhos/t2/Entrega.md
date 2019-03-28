@@ -7,7 +7,7 @@ ELC139 Programação Paralela
 
 1. Escolha um computador com mais de um núcleo de processamento. Verifique suas características (processador, memória).
 
-As características estão em [specs.txt](specs.txt).
+    As características estão em [specs.txt](specs.txt).
 
 2. Faça fetch e merge do repositório original da disciplina para obter os arquivos necessários para o trabalho.
 
@@ -37,7 +37,7 @@ As características estão em [specs.txt](specs.txt).
     ./pthreads_dotprod 2 500000 2000
     ```
 
-O resultado deve ser o mesmo do caso anterior, mas o tempo de processamento deve ser diferente.
+    O resultado deve ser o mesmo do caso anterior, mas o tempo de processamento deve ser diferente.
 
     ```
     $./pthreads_dotprod 2 500000 2000
@@ -89,7 +89,7 @@ e entre elas está em
 
 O mapeamento é estático, cada thread executa produtos escalares de mesmo tamanho. Ele está implementado em
 
-    ```
+    ``` c
     for(i = 0; i < nthreads; i++)
     {
         pthread_create(&threads[i], &attr, dotprod_worker, (void *) i);
@@ -166,7 +166,7 @@ A linha
 ### Implementação OpenMP
 
 1. Implemente um programa equivalente a [pthreads_dotprod.c](pthreads_dotprod/pthreads_dotprod.c) usando OpenMP.
-[openmp_dotprod.c](openmp/openmp_dotprod.c)
+O programa está em [openmp_dotprod.c](openmp/openmp_dotprod.c).
 
 2. Avalie o desempenho do programa em OpenMP, usando os mesmos dados/argumentos do programa com threads POSIX. 
 
