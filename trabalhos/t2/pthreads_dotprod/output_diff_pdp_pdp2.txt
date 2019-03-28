@@ -1,0 +1,8 @@
+45c45
+<     pthread_mutex_lock (&mutexsum);
+---
+> 
+47c47
+<     pthread_mutex_unlock (&mutexsum);
+---
+> 

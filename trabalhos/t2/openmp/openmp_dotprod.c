@@ -1,11 +1,10 @@
 /*
- * Exemplo de programa para calculo de produto escalar em paralelo, usando POSIX threads.
- * andrea@inf.ufsm.br
+ * Exemplo de programa para calculo de produto escalar em paralelo, usando openMP.
  */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <pthread.h>
+#include <omp.h>
 #include <sys/time.h>
 
 typedef struct
@@ -19,59 +18,27 @@ typedef struct
 
 /* Variaveis globais, acessiveis por todas threads */
 dotdata_t dotdata;
-pthread_mutex_t mutexsum;
 
 /* Funcao executada por uma thread */
-void *dotprod_worker(void *arg)
+void *dotprod_worker(int nthreads)
 {
     int i, j;
-    long offset = (long) arg;
     double *a = dotdata.a;
     double *b = dotdata.b;
-    int wsize = dotdata.wsize;
-    int start = offset*wsize;
-    int end = start + wsize;
+    int wsize = dotdata.wsize * nthreads;
     double mysum;
 
+    #pragma omp parallel for shared(a,b) reduction(+:mysum) private(i,j)
     for(j = 0; j < dotdata.repeat; j++)
     {
         mysum = 0.0;
-        for(i = start; i < end; i++)
+        for(i = 0; i < wsize; i++)
         {
             mysum += (a[i] * b[i]);
         }
     }
 
-
-    dotdata.c += mysum;
-
-
-    pthread_exit((void *) 0);
-}
-
-/* Distribui o trabalho entre nthreads */
-void dotprod_threads(int nthreads)
-{
-    int i;
-    pthread_t *threads;
-    pthread_attr_t attr;
-
-    threads = (pthread_t *) malloc(nthreads * sizeof(pthread_t));
-    pthread_mutex_init(&mutexsum, NULL);
-
-    pthread_attr_init(&attr);
-    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
-
-    for(i = 0; i < nthreads; i++)
-    {
-        pthread_create(&threads[i], &attr, dotprod_worker, (void *) i);
-    }
-    pthread_attr_destroy(&attr);
-    for(i = 0; i < nthreads; i++)
-    {
-        pthread_join(threads[i], NULL);
-    }
-    free(threads);
+    dotdata.c = mysum;
 }
 
 /* Tempo (wallclock) em microssegundos */
@@ -118,8 +85,9 @@ int main(int argc, char **argv)
     dotdata.repeat = repeat;
 
     /* Calcula c = a . b em nthreads, medindo o tempo */
+    omp_set_num_threads(nthreads); /* https://computing.llnl.gov/tutorials/openMP/#OMP_SET_NUM_THREADS */
     start_time = wtime();
-    dotprod_threads(nthreads);
+    dotprod_worker(nthreads);
     end_time = wtime();
 
     /* Mostra resultado e estatisticas da execucao */

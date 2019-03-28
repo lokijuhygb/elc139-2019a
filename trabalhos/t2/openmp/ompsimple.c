@@ -1,10 +1,10 @@
 #include <omp.h>
 #include <stdio.h>
 
-int main() 
+int main()
 {
-  #pragma omp parallel
-  printf("Hello World\n");
-  return 0;
+    #pragma omp parallel
+    printf("Hello World\n");
+    return 0;
 }
 
