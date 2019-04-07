@@ -6,9 +6,9 @@ lokijuhygb
 
 ## Resultados
 
-O programa [OpenMPDemoABC.cpp](OpenMPDemoABC.cpp) explora as opções de escalonamento da clausula `schedule` definido o tipo como `runtime` e manipulando a variável de ambiente [OMP_SCHEDULE](https://gcc.gnu.org/onlinedocs/libgomp/OMP_005fSCHEDULE.html#OMP_005fSCHEDULE), que seta a variável interna `run-sched-var`, utilizada pelo OpenMP para definir o tipo de escalonamento nesse caso.
+O programa [OpenMPDemoABC.cpp](OpenMPDemoABC.cpp) explora as opções de escalonamento da clausula `schedule` definindo o tipo como `runtime` e manipulando a variável de ambiente [OMP_SCHEDULE](https://gcc.gnu.org/onlinedocs/libgomp/OMP_005fSCHEDULE.html#OMP_005fSCHEDULE), que seta a variável interna `run-sched-var`, utilizada pelo OpenMP para definir o tipo de escalonamento nesse caso.
 
-Reparar que o `item 4` é executado antes de qualquer manipulação da variável de ambiente, e que valores negativos de `chunk` implicam em valores `default`, exceto para `auto`, onde é ignorado, mas precisa ser definido porque a função [omp_set_schedule](https://gcc.gnu.org/onlinedocs/libgomp/omp_005fset_005fschedule.html#omp_005fset_005fschedule) espera dois argumentos.
+Reparar que o `item 4`, dos [casos solicitados](README.md), é executado pelo programa antes de qualquer manipulação da variável de ambiente, e que valores negativos de `chunk` implicam em valores `default`, exceto para `auto`, onde é ignorado, mas precisa ser definido porque a função [omp_set_schedule](https://gcc.gnu.org/onlinedocs/libgomp/omp_005fset_005fschedule.html#omp_005fset_005fschedule) espera dois argumentos.
 
 A seguir o resultado do programa para `duas threads`, `um array de 61 posições` e `chunk_size = 4`:
 
