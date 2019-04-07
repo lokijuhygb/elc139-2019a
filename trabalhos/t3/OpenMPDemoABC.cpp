@@ -114,17 +114,18 @@ class ArrayFiller
 
 int main(int argc, char** argv)
 {
-	int nthreads, worksize;
+	int nthreads, worksize, chunksize;
 
-	if(argc != 3)
+	if(argc != 4)
 	{
-		std::cout << "Uso:" << argv[0] << " <nthreads> <worksize>" << std::endl;
+		std::cout << "Uso:" << argv[0] << " <nthreads> <worksize> <chunksize>" << std::endl;
 
 		exit(EXIT_FAILURE);
 	}
 
-	nthreads = atoi(argv[1]);
-	worksize = atoi(argv[2]); /* worksize = tamanho do array */
+	nthreads  = atoi(argv[1]);
+	worksize  = atoi(argv[2]); /* worksize = tamanho do array */
+	chunksize = atoi(argv[3]); /* worksize = tamanho do array */
 
 	omp_set_num_threads(nthreads);
 
@@ -148,7 +149,7 @@ int main(int argc, char** argv)
 	t4nt.fillArrayConcurrently();
 	t4nf.fillArrayConcurrently();
 
-	omp_set_schedule(omp_sched_static,4);
+	omp_set_schedule(omp_sched_static,chunksize);
 	t1ct.fillArrayConcurrently();
 	t1cf.fillArrayConcurrently();
 
@@ -156,7 +157,7 @@ int main(int argc, char** argv)
 	t1st.fillArrayConcurrently();
 	t1sf.fillArrayConcurrently();
 
-	omp_set_schedule(omp_sched_dynamic,4);
+	omp_set_schedule(omp_sched_dynamic,chunksize);
 	t2ct.fillArrayConcurrently();
 	t2cf.fillArrayConcurrently();
 
@@ -164,7 +165,7 @@ int main(int argc, char** argv)
 	t2st.fillArrayConcurrently();
 	t2sf.fillArrayConcurrently();
 
-	omp_set_schedule(omp_sched_guided,4);
+	omp_set_schedule(omp_sched_guided,chunksize);
 	t3ct.fillArrayConcurrently();
 	t3cf.fillArrayConcurrently();
 
