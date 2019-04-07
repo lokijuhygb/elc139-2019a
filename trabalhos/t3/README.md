@@ -50,4 +50,3 @@ No seu repositório da disciplina, na pasta `trabalhos/t3`, crie um documento `E
 
 - [Tutorial OpenMP](https://computing.llnl.gov/tutorials/openMP/)  
   Tutorial do Lawrence Livermore National Laboratory (LLNL) sobre OpenMP. 
-
