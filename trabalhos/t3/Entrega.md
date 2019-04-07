@@ -1,4 +1,5 @@
 ELC139 Programação Paralela
+
 lokijuhygb
 
 # T3: Scheduling com OpenMP
