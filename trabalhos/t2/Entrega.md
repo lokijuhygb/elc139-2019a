@@ -1,4 +1,5 @@
 lokijuhygb
+
 ELC139 Programação Paralela
 
 # T2: Programação Paralela Multithread 

@@ -23,7 +23,7 @@
 
 ## Trabalho
 
-Usando o programa [ThreadDemoABC.cpp](ThreadDemoABC.cpp) como inspiração, você deverá criar um novo programa chamado `OpenMPDemoABC.cpp`. Seu programa vai implementar vários casos com threads que atualizam o array compartilhado, usando OpenMP, ilustrando o efeito das opções de escalonamento disponíveis para a cláusula `schedule`:
+Usando o programa [ThreadDemoABC.cpp](ThreadDemoABC.cpp) como inspiração, você deverá criar um novo programa chamado [OpenMPDemoABC.cpp](OpenMPDemoABC.cpp). Seu programa vai implementar vários casos com threads que atualizam o array compartilhado, usando OpenMP, ilustrando o efeito das opções de escalonamento disponíveis para a cláusula `schedule`:
 
   1. Schedule `static`, com e sem especificação do `chunk`
   2. Schedule `dynamic`, com e sem especificação do `chunk`
@@ -37,9 +37,9 @@ Usando o programa [ThreadDemoABC.cpp](ThreadDemoABC.cpp) como inspiração, voc�
 
 ## Entrega
 
-No seu repositório da disciplina, na pasta `trabalhos/t3`, crie um documento `Entrega.md`, contendo:
+No seu repositório da disciplina, na pasta `trabalhos/t3`, crie um documento [Entrega.md](Entrega.md), contendo:
  - Identificação da disciplina e do aluno;
- - Link para o programa `OpenMPDemoABC.cpp` desenvolvido.
+ - Link para o programa [OpenMPDemoABC.cpp](OpenMPDemoABC.cpp) desenvolvido.
  - Exemplo de saída do programa, com explicação dos casos de teste.
  - Referências.
  
