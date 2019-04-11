@@ -102,9 +102,10 @@ int main(int argc, char *argv[])
 
 	// end time
 	gettimeofday(&end, NULL);
-	double runtime = end.tv_sec + end.tv_usec / 1000000.0 - start.tv_sec - start.tv_usec / 1000000.0;
-
-	printf("compute time: %.4f s\n", runtime);
+	//double runtime = end.tv_sec + end.tv_usec / 1000000.0 - start.tv_sec - start.tv_usec / 1000000.0;
+	//printf("compute time: %.4f s\n", runtime);
+	long runtime = (end.tv_sec - start.tv_sec)*1000000  + end.tv_usec - start.tv_usec;
+	printf("compute time: %ld usec\n", runtime);
 
 	// verify result by writing frames to BMP files
 	if((width <= 256) && (frames <= 100))
