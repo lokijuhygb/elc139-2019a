@@ -22,7 +22,8 @@ Author: Martin Burtscher
 
 #include <cstdlib>
 #include <sys/time.h>
-#include "fractal.h"
+#include <omp.h>
+#include "fractal/fractal.h"
 
 static const double Delta = 0.001;
 static const double xMid  = 0.23701;
@@ -30,12 +31,10 @@ static const double yMid  = 0.521;
 
 int main(int argc, char *argv[])
 {
-	printf("Fractal v1.6 [serial]\n");
-
 	// check command line
-	if(argc != 3)
+	if(argc != 4)
 	{
-		fprintf(stderr, "usage: %s frame_width num_frames\n", argv[0]);
+		fprintf(stderr, "usage: %s frame_width num_frames num_threads\n", argv[0]);
 		exit(-1);
 	}
 
@@ -52,9 +51,17 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "error: num_frames must be at least 1\n");
 		exit(-1);
 	}
-	
-	printf("computing %d frames of %d by %d fractal\n", frames, width, width);
 
+	int nthreads = atoi(argv[3]);
+	if(nthreads < 1)
+	{
+		fprintf(stderr, "error: num_threads must be at least 1\n");
+		exit(-1);
+	}
+// 	printf("computing %d frames of %d by %d fractal with %d nthreads\n", frames, width, width, nthreads);
+
+	omp_set_num_threads(nthreads);
+	
 	// allocate picture array
 	unsigned char* pic = new unsigned char[frames * width * width];
 
@@ -64,37 +71,36 @@ int main(int argc, char *argv[])
 
 		// compute frames
 		double delta = Delta;
-		
+
 		for(int frame = 0; frame < frames; frame++)
 		{
 			const double xMin = xMid - delta;
 			const double yMin = yMid - delta;
 			const double dw = 2.0 * delta / width;
 
-			for(int row = 0; row < width; row++)
+			#pragma omp parallel for schedule(dynamic)
+			for(int rowcol = 0; rowcol < width*width; rowcol++)
 			{
-				const double cy = yMin + row * dw;
+				int row = rowcol%width;
+				int col = rowcol/width;
+				
+				const double cx = xMin + row * dw;
+				double x = cx;
+				double y = yMin + col * dw;
+				int depth = 256;
+				double x2, y2;
 
-				for(int col = 0; col < width; col++)
+				do
 				{
-					const double cx = xMin + col * dw;
-					double x = cx;
-					double y = cy;
-					int depth = 256;
-					double x2, y2;
-
-					do
-					{
-						x2 = x * x;
-						y2 = y * y;
-						y = 2 * x * y + cy;
-						x = x2 - y2 + cx;
-						depth--;
-					}
-					while((depth > 0) && ((x2 + y2) < 5.0));
-
-					pic[frame * width * width + row * width + col] = (unsigned char)depth;
+					x2 = x * x;
+					y2 = y * y;
+					y = 2 * x * y + (yMin + col * dw);
+					x = x2 - y2 + cx;
+					depth--;
 				}
+				while((depth > 0) && ((x2 + y2) < 5.0));
+
+				pic[frame * width * width + col * width + row] = (unsigned char)depth;
 			}
 
 			delta *= 0.98;
@@ -102,10 +108,9 @@ int main(int argc, char *argv[])
 
 	// end time
 	gettimeofday(&end, NULL);
-	//double runtime = end.tv_sec + end.tv_usec / 1000000.0 - start.tv_sec - start.tv_usec / 1000000.0;
-	//printf("compute time: %.4f s\n", runtime);
 	long runtime = (end.tv_sec - start.tv_sec)*1000000 + end.tv_usec - start.tv_usec;
-	printf("compute time: %ld usec\n", runtime);
+	//printf("compute time: %ld usec\n", runtime);
+	printf("3,%d,%d,%d,%ld\n", width, frames, nthreads, runtime);
 
 	// verify result by writing frames to BMP files
 	if((width <= 256) && (frames <= 100))

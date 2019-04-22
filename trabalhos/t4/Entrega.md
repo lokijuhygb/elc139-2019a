@@ -6,11 +6,13 @@ lokijuhygb
 
 ## Resultados
 
-[fractalpar1.cpp](fractalpar1.cpp)
+Soluções: [fractalpar1.cpp](fractalpar1.cpp), [fractalpar2.cpp](fractalpar2.cpp)
 
-[fractalpar2.cpp](fractalpar2.cpp)
+Programa reescrito: [fractalpar3.cpp](fractalpar3.cpp)
 
-[fractal slides](fractalslides.pdf)
+Slides: [opd](fractalslides.odp), [pdf](fractalslides.pdf)
+
+Resultados: [resumo](resultados.csv), [completo](resultados.ods)
 
 
 ## Referências
