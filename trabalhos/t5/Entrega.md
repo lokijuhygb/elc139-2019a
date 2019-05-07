@@ -77,3 +77,5 @@ Problema: falta a rotina `MPI_Finalize();`.
 
 - [Tutorial MPI](https://computing.llnl.gov/tutorials/mpi/)
   Tutorial do Lawrence Livermore National Laboratory (LLNL) sobre MPI.
+
+- [MPI Reduce and Allreduce](http://mpitutorial.com/tutorials/mpi-reduce-and-allreduce/)
