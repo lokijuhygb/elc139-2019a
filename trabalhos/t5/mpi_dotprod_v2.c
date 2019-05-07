@@ -61,6 +61,9 @@ int main(int argc, char **argv)
 {
 	int rank;			/* rank do processo (0 a P-1) */
 	int p;				/* número de processos */
+	int source;         /* rank do processo remetente */
+	int dest = 0;		/* rank do processo destinatário */
+	int tag = 0;		/* etiqueta da mensagem */
 	double result;		/* a mensagem (resultado do calculo) */
 	MPI_Status status;	/* status de uma operação efetuada */
 	int wsize, repeat;
@@ -81,14 +84,25 @@ int main(int argc, char **argv)
 	repeat = atoi(argv[2]);
 
 	start_time_mpi = MPI_Wtime();
-
-		result = dotprod_mpi(wsize, repeat);
-		MPI_Reduce(&result, &total_dotprod, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-
-	end_time_mpi = MPI_Wtime();
-
-	if (rank == 0)
+	/* Calculam e enviam mensagem ao processo 0 */
+	if(rank != 0)
 	{
+		result = dotprod_mpi(wsize, repeat);
+		MPI_Send(&result, 1, MPI_DOUBLE, dest, tag, MPI_COMM_WORLD); 
+	}
+	else	/* Calcula e recebe as mensagens dos processos e totaliza */
+	{
+		double total_dotprod = dotprod_mpi(wsize, repeat);
+
+		/* recebe p-1 mensagens */
+		for(source = 1; source < p; source++)
+		{
+			MPI_Recv(&result, 1, MPI_DOUBLE, source, tag, MPI_COMM_WORLD, &status);
+			total_dotprod += result;
+		}
+
+		end_time_mpi = MPI_Wtime();
+
 		printf("%d,%d,%d,%f\n", p, wsize, repeat, (end_time_mpi - start_time_mpi) * 1000000);
 	}
 

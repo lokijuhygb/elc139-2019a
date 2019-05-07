@@ -8,7 +8,7 @@ ELC139 Programação Paralela
 
 + Implemente uma versão em MPI do programa do trabalho [t2](../t2), que calcula repetidas vezes o produto escalar entre 2 vetores. Os argumentos do programa devem ser: o número de elementos para cada processo e o número de repetições.
 
-	O programa está em [mpi_dotprod.c](mpi_dotprod.c).
+	O programa está em [mpi_dotprod.c](mpi_dotprod.c) ou [mpi_dotprod_v2.c](mpi_dotprod_v2.c).
 
 + Avalie o desempenho do programa conforme as instruções do trabalho [t2](../t2), mas variando o número de processos (-np) ao invés de threads.
 
@@ -62,13 +62,15 @@ Pipeline de 7 processos
 
 + O programa [mpi_errado1.c](mpi_errado1.c) deveria realizar a troca de mensagens entre 2 processos, mas ele não funciona como esperado. Identifique o erro e corrija-o.
 
-	[mpi_errado1_corrigido.c](mpi_errado1_corrigido.c). [diff](diff_mpi_errado1.txt)
-	Problema: tag das mensagens enviadas e recebidas não são as mesmas.
+[mpi_errado1_corrigido.c](mpi_errado1_corrigido.c). [diff](diff_mpi_errado1.txt)
+
+Problema: tag das mensagens enviadas e recebidas não são as mesmas.
 
 + O programa [mpi_errado2.c](mpi_errado2.c) deveria realizar a troca de mensagens entre 2 processos, mas também não funciona como esperado. Identifique o erro e corrija-o.
 
-	[mpi_errado2_corrigido.c](mpi_errado2_corrigido.c). [diff](diff_mpi_errado2.txt)
-	Problema: falta a rotina ´MPI_Finalize();´.
+[mpi_errado2_corrigido.c](mpi_errado2_corrigido.c). [diff](diff_mpi_errado2.txt)
+
+Problema: falta a rotina `MPI_Finalize();`.
 
 
 ## Referências
