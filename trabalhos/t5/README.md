@@ -44,7 +44,7 @@ Implemente um programa MPI que transporte uma mensagem em um pipeline formado po
 
 ## Entrega
 
-No seu repositório da disciplina, na pasta `trabalhos/t5`, crie um documento `Entrega.md`, contendo:
+No seu repositório da disciplina, na pasta `trabalhos/t5`, crie um documento [Entrega.md](Entrega.md), contendo:
  - Identificação da disciplina e do(a) aluno(a);
  - Respostas para as partes 1, 2 e 3, incluindo links para os códigos desenvolvidos;
  - Referências.

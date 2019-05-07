@@ -1,0 +1,5 @@
+Procesador: Intel Core 2 Duo P8600
+Núcleos: 2
+Frequência: 2.4 GHz
+Memória: 2 x 4 GB DDR3 1333 MHz
+SO: GNU (Debian Stretch com kernel Linux-libre)

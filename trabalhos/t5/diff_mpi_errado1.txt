@@ -1,0 +1,8 @@
+29c29
+< 		tag = rank;
+---
+> 		tag = 0;	/* tag das mensagens enviadas e recebidas deve ser compatível */
+39c39
+< 		tag = rank;
+---
+> 		tag = 0;	/* tag das mensagens enviadas e recebidas deve ser compatível */
