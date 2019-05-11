@@ -15,7 +15,7 @@ Leia o artigo [Send-receive considered harmful: Myths and realities of message p
 
 ## Entrega
 
-No seu repositório da disciplina, na pasta `trabalhos/t8`, crie um documento `Entrega.md`, contendo:
+No seu repositório da disciplina, na pasta `trabalhos/t8`, crie um documento [Entrega.md](Entrega.md), contendo:
  - Identificação da disciplina e do aluno;
  - Parte 1: explicação sobre as alterações e link para o código desenvolvido;
  - Parte 2: resumo crítico;
