@@ -26,6 +26,8 @@ A matriz B e as linhas da matriz A são enviadas pelo processo zero e recebidas 
 
 - [MPI Reduce and Allreduce](http://mpitutorial.com/tutorials/mpi-reduce-and-allreduce/)
 
+- [MPI Documents](https://www.mpi-forum.org/docs/)
+
 - [Tutorial MPI](https://computing.llnl.gov/tutorials/mpi/)
   Tutorial do Lawrence Livermore National Laboratory (LLNL) sobre MPI.
 
