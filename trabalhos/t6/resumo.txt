@@ -1,0 +1,11 @@
+O artigo utiliza uma estratégia mito-realidade para argumentar que as chamadas send-receive devem ser evitadas em programação paralela, sendo substituídas pelas chamadas coletivas. Os argumentos são agrupados em cinco temas: simplicidade, expressividade, programabilidade, desempenho e previsibilidade.
+
+Na primeira, argumenta que a simplicidade de send-receive é aparente, tornando programas paralelos difíceis de depurar e escrever, por serem maiores, com estrutura de comunicação complicada e com muitas possibilidades. 
+
+Em programabilidade argumenta que o uso de chamadas coletivas podem ser usadas num processo de sistematização da escrita de programas paralelos.
+
+Em expressividade apresenta aplicações importantes escritas com chamadas coletivas, sem perda de desempenho em relações as escritas com send-receive.
+
+Em desempenho apresenta situações que as chamadas coletivas podem ter melhor desempenho e observações empíricas para concluir que as coletivas são competitivas em relação as send-receive.
+
+Por fim, em previsibilidade argumenta que o processo de sistematização da escrita de programas paralelos contribui para a predição do comportamento do programa durante o processo de escrita.
