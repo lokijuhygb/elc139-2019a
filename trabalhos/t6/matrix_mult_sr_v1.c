@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
 	MPI_Bcast(B, SIZE * SIZE, MPI_INT, 0, MPI_COMM_WORLD);
 
 	//MPI_Scatter(void* send_data, int send_count, MPI_Datatype send_datatype, void* recv_data, int recv_count, MPI_Datatype recv_datatype, int root, MPI_Comm communicator)
-	MPI_Scatter(A[from], SIZE*SIZE/nproc, MPI_INT, A[from], SIZE*SIZE/nproc, MPI_INT, 0, MPI_COMM_WORLD);
+	MPI_Scatter(A, SIZE*SIZE/nproc, MPI_INT, A[from], SIZE*SIZE/nproc, MPI_INT, 0, MPI_COMM_WORLD);
 
 
 	printf("computing slice %d (from row %d to %d)\n", myrank, from, to-1);
