@@ -8,23 +8,23 @@ ELC139 Programação Paralela
 
 [specs.txt](specs.txt)
 
-[testes.sh](testes.sh)
+[testes_mpi.sh](testes_mpi.sh)
 
 [b_bcast.c](b_bcast.c)
 
 [resultados_parte1.csv](resultados_parte1.csv)
 
-<img src="grafico1.png" width="300">
+<img src="grafico1.png" width="600">
 
 ## Parte 2:
 
 [resultados_parte2.csv](resultados_parte2.csv)
 
-<img src="grafico2.png" width="300">
+<img src="grafico2.png" width="600">
 
-<img src="grafico3.png" width="300">
+<img src="grafico3.png" width="600">
 
-<img src="grafico4.png" width="300">
+<img src="grafico4.png" width="600">
 
 
 
