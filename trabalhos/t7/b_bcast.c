@@ -54,13 +54,13 @@ int main(int argc, char** argv)
 	{
 		data = 100;  // atribui um valor para ser enviado
 // 		printf("Processo %d (root) realizando broadcast do dado %d\n", root, data);
-		sr_bcast(&data, 1, MPI_INT, root, MPI_COMM_WORLD);
-// 		MPI_Bcast(&data, 1, MPI_INT, root, MPI_COMM_WORLD);
+// 		sr_bcast(&data, 1, MPI_INT, root, MPI_COMM_WORLD);
+		MPI_Bcast(&data, 1, MPI_INT, root, MPI_COMM_WORLD);
 	}
 	else
 	{
-		sr_bcast(&data, 1, MPI_INT, root, MPI_COMM_WORLD);
-// 		MPI_Bcast(&data, 1, MPI_INT, root, MPI_COMM_WORLD);
+// 		sr_bcast(&data, 1, MPI_INT, root, MPI_COMM_WORLD);
+		MPI_Bcast(&data, 1, MPI_INT, root, MPI_COMM_WORLD);
 // 		printf("Processo %d recebendo dado %d do processo root\n", myrank, data);
 	}
 

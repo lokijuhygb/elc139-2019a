@@ -96,7 +96,7 @@ Utilizando o simulador SMPI com os arquivos [cluster_crossbar.xml](cluster_cross
 
 ## Entrega
 
-No seu repositório da disciplina, na pasta `trabalhos/t7`, crie um documento `Entrega.md`, contendo:
+No seu repositório da disciplina, na pasta `trabalhos/t7`, crie um documento [Entrega.md](Entrega.md), contendo:
  - Identificação da disciplina e do aluno;
  - Respostas para as partes 1 e 2, incluindo links para os códigos desenvolvidos;
  - Referências.
