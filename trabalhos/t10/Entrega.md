@@ -54,3 +54,4 @@ https://computing.llnl.gov/tutorials/linux_clusters/intelAVXperformanceWhitePape
 
 http://www.doc.ic.ac.uk/~dt10/teaching/2011/hpce/hpce-lec7-tbb-details.pdf
 
+https://bps90.github.io/assets/files/2012-03-12-ERBASE_28-03-12_versao_submetida.pdf
