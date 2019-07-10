@@ -4,7 +4,7 @@ ELC139 Programação Paralela
 
 # T10: 
 
-Comparativo entre `OpenMP` e [TBB (Threading Building Blocks)](https://www.threadingbuildingblocks.org/) utilizando `#pragma simd` e o problema `Mandelbrot` no node [CDER03](https://help.rs.gsu.edu/display/PD/CDER).
+Comparativo entre [OpenMP](https://www.openmp.org/) e [TBB (Threading Building Blocks)](https://www.threadingbuildingblocks.org/) utilizando `#pragma simd` e o problema `Mandelbrot` no node [CDER03](https://help.rs.gsu.edu/display/PD/CDER).
 
 [mandelbrot_serial.cpp](mandelbrot_serial.cpp)
 
@@ -30,6 +30,8 @@ Comparativo entre `OpenMP` e [TBB (Threading Building Blocks)](https://www.threa
 
 ## Referências
 
+https://pdfs.semanticscholar.org/7b80/cc9d5e00567f7f509b18dc33f66935ab4b7f.pdf
+
 https://en.wikipedia.org/wiki/Threading_Building_Blocks
 
 https://software.intel.com/en-us/articles/migrate-your-application-to-use-openmp-or-intelr-tbb-instead-of-intelr-cilktm-plus
@@ -43,3 +45,12 @@ https://www.ibm.com/support/knowledgecenter/en/SSXVZZ_16.1.1/com.ibm.xlcpp1611.l
 http://hpac.rwth-aachen.de/teaching/pp-16/material/08.OpenMP-4.pdf
 
 https://www.threadingbuildingblocks.org/docs/help/reference/appendices/community_preview_features/tbb_global_control.htm
+
+ftp://ftp.inf.ufrgs.br/pub/geyer/PDP-CIC-ECP/slidesAlunos/AulaExtra-2011-1/PDP-2011-1-tbb-Stefano.pdf
+
+https://software.intel.com/pt-br/articles/programacao-vetorial-e-paralela-com-amplificador-intel-vtune
+
+https://computing.llnl.gov/tutorials/linux_clusters/intelAVXperformanceWhitePaper.pdf
+
+http://www.doc.ic.ac.uk/~dt10/teaching/2011/hpce/hpce-lec7-tbb-details.pdf
+
