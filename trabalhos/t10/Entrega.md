@@ -8,7 +8,7 @@ Comparativo entre `OpenMP` e [TBB (Threading Building Blocks)](https://www.threa
 
 [mandelbrot_serial.cpp](mandelbrot_serial.cpp)
 
-[mandelbrot_openmp.cpp]
+[mandelbrot_openmp.cpp](mandelbrot_openmp.cpp)
 
 [mandelbrot_openmp_simd.cpp](mandelbrot_openmp_simd.cpp)
 
